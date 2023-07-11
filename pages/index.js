@@ -1,10 +1,27 @@
 import Head from 'next/head'
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { PostCard, CategoriesComponent, PostWidget } from '../components' 
 import { getPosts } from '../services'
 
-export default function Home({ posts }) {
+const Home = () => {
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const posts = await getPosts();
+        setPosts(posts || []);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -34,10 +51,4 @@ export default function Home({ posts }) {
   )
 }
 
-export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
-
-  return {
-    props: { posts }
-  }
-}
+export default Home;
