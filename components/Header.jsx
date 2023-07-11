@@ -19,7 +19,8 @@ const Header = () => {
                 <div className='md:float-left block'>
                     <Link href="/">
                         <span className='cursor-pointer font-bold text-4xl text-white'>
-                            <Image src="/../public/Blog_logo.jpg" width={126} height={67} alt='OLI baustoffe logo'/>
+                            {/* <Image src="/../public/Blog_logo.jpg" width={126} height={67} alt='OLI baustoffe logo'/> */}
+                            OLI Baustoffe Blog
                         </span>
                     </Link>
                 </div>
