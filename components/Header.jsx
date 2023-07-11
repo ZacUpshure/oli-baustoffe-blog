@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { getCategories } from '../services'
 import Link from 'next/link';
 
+const logo = 'https://oli-baustoffe-images.s3.eu-central-1.amazonaws.com/Olibaustoffe_bilder/Blog_logo.jpg';
+
 const Header = () => {
 
     const [categories, setCategories] = useState([]);
@@ -17,7 +19,7 @@ const Header = () => {
                 <div className='md:float-left block'>
                     <Link href="/">
                         <span className='cursor-pointer font-bold text-4xl text-white'>
-                            <Image src='https://oli-baustoffe-images.s3.eu-central-1.amazonaws.com/Olibaustoffe_bilder/Blog_logo.jpg' width={126} height={67} alt='OLI baustoffe logo'/>
+                            <Image src={logo} width={126} height={67} alt='OLI baustoffe logo'/>
                         </span>
                     </Link>
                 </div>
