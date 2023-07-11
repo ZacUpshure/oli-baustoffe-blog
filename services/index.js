@@ -1,5 +1,12 @@
-import { request, gql } from 'graphql-request';
+import { gql } from 'graphql-request';
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+
+let request;
+
+if (typeof window !== 'undefined') {
+  // Import the `request` function only on the client-side
+  request = require('graphql-request').request;
+}
 
 export const getPosts = async () => {
     const query = gql`
