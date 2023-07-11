@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { getCategories } from '../services'
 import Link from 'next/link';
 
-const logo = 'https://oli-baustoffe-images.s3.eu-central-1.amazonaws.com/Olibaustoffe_bilder/Blog_logo.jpg';
+const logo = '../assets/Blog_logo.jpg';
 
 const Header = () => {
 
